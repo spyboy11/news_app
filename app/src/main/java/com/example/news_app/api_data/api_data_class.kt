@@ -12,5 +12,8 @@ class apiData (
     val author: String,
     val title: String,
     val discription: String,
-    val publishedAt: String
+    val url: String,
+    val urlToImage: String,
+    val publishedAt: String,
+    val content: String
 )
