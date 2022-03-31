@@ -1,5 +1,6 @@
 package com.example.news_app
 
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -51,10 +52,12 @@ class RecyclerViewAdapter: PagedListAdapter<apiData, RecyclerViewAdapter.ViewHol
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        holder.bind(getItem(position)!!)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        TODO("Not yet implemented")
+        val inflater = LayoutInflater.from(parent.context).inflate(R.layout.recyclerview, parent, false)
+
+        return ViewHolder(inflater)
     }
 }
