@@ -14,18 +14,7 @@ import com.example.news_app.api_data.apiData
 class RecyclerViewAdapter: PagedListAdapter<apiData, RecyclerViewAdapter.ViewHolder>(DiffUtil()) {
 
     class ViewHolder(view: View): RecyclerView.ViewHolder(view){
-        /*
-        val source: String,
-        val id: String,
-        val name: String,-
-        val author: String,-
-        val title: String,-
-        val discription: String,-
-        val url: String,-
-        val urlToImage: String,-
-        val publishedAt: String,-
-        val content: String-
-         */
+
         val newsImg: ImageView = view.findViewById(R.id.newsImg)
         val author: TextView = view.findViewById(R.id.author)
         val date: TextView = view.findViewById(R.id.date)
@@ -33,8 +22,10 @@ class RecyclerViewAdapter: PagedListAdapter<apiData, RecyclerViewAdapter.ViewHol
         val description: TextView = view.findViewById(R.id.description)
         val siteUrl: TextView = view.findViewById(R.id.url)
         val content: TextView = view.findViewById(R.id.content)
+        val id: TextView = view.findViewById(R.id.id)
 
         fun bind(data: apiData){
+            id.text = data.id
             author.text = data.author
             date.text = data.publishedAt
             title.text = data.title

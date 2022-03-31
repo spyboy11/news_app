@@ -21,7 +21,7 @@ class apiDataSource(): PageKeyedDataSource<Int, apiData>() {
 
             override fun onResponse(call: Call<api_data_class>, response: Response<api_data_class>) {
                 if (response.isSuccessful) {
-                    callback.onResult(response?.body()?.articals!!, params.key+1)
+                    callback.onResult(response?.body()?.articals!!, params.key)
                 }
             }
         })
